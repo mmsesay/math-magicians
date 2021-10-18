@@ -20,7 +20,7 @@ Coming soon...
 
 - GitHub: [@mmsesay](https://github.com/mmsesay)
 - Twitter: [@DeeMaejor](https://twitter.com/DeeMaejor)
-- LinkedIn: [Muhammad Sesay](https://linkedin.com/in/muhammad-m-sesay)
+- LinkedIn: [Muhammad M Sesay](https://linkedin.com/in/muhammad-m-sesay)
 
 ## 🤝 Contributing
 
