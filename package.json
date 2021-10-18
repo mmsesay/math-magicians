@@ -1,5 +1,6 @@
 {
   "name": "math-magicians",
+  "description": "Math magicians is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:  Make simple calculations and read a random math-related quote.",
   "author": {
     "name": "Muhammad Sesay",
     "email": "contact@maej.dev",
@@ -12,6 +13,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "install-peerdeps": "^3.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -42,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.14.5",
     "eslint-plugin-react": "^7.26.1"
   }
 }
