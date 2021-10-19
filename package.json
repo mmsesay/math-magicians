@@ -46,6 +46,9 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-jsx": "^7.14.5",
-    "eslint-plugin-react": "^7.26.1"
+    "autoprefixer": "^10.3.7",
+    "eslint-plugin-react": "^7.26.1",
+    "postcss": "^8.3.9",
+    "tailwindcss": "^2.2.17"
   }
 }
