@@ -1,15 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Calculator } from './components/Calculator';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>MATH MAGICIANS APPLICATION SETUP</p>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <head>
+      <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"
+          rel="stylesheet"/>
+    </head>
+    <main className="bg-gray-600 h-screen flex items-center justify-center">
+      <Calculator />
+    </main>
+  </div>
+);
 
 export default App;
