@@ -12,29 +12,51 @@ export const Calculator = () => {
   const numbers = '0123456789';
 
   const handleValues = (event) => {
-    if (numbers.includes(event.target.name)) {
-      if (firstValue === '') {
-        setFirstValue(event.target.name);
-        setResult(`${result}${event.target.name}`);
-      } else {
-        setSecondValue(event.target.name);
-        setResult(`${result}${event.target.name}`);
-      }
-    }
+    /* validate if we got a operator as first value. set that value to the first
+    other set the operator */
 
     if (operators.includes(event.target.name)) {
-      setOperator(event.target.name);
+      if (firstValue === '') {
+        setFirstValue(event.target.name);
+      } else {
+        setOperator(event.target.name);
+      }
       setResult(`${result}${event.target.name}`);
     }
 
-    const response = calculate(dataObject, event.target.name);
-    if (response) {
-      setFirstValue(response.total);
-      setSecondValue(response.next);
-      setOperator(response.operation);
+    if (numbers.includes(event.target.name)) {
+      // validate for emp
+      if (dataObject.operation === '') {
+        // set the firstValue if we have non else concatenate the existing with new value
+        if (firstValue === '') {
+          setFirstValue(event.target.name);
+        } else if (firstValue) {
+          setFirstValue(`${firstValue}${event.target.name}`);
+        }
+      } else {
+        setSecondValue(event.target.name);
+      }
+      setResult(`${result}${event.target.name}`);
+    }
 
-      if (response.next === null && response.operation === null) {
-        setResult(`${response.total || ''}`);
+    console.log(dataObject);
+    if (firstValue && secondValue && operator) {
+      const response = calculate(dataObject, event.target.name);
+      if (response) {
+        console.log(response);
+        setFirstValue(response.total);
+        setSecondValue(response.next);
+        setOperator(response.operation);
+
+        // set the total result if both next and operation are null
+        if (response.next === null && response.operation === null) {
+          setResult(`${response.total || ''}`);
+        }
+
+        // check for dot and display the result
+        if (response.next !== null) {
+          setResult(`${response.next || ''}`);
+        }
       }
     }
   };
