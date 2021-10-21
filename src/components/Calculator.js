@@ -10,7 +10,7 @@ export const Calculator = () => {
   const [isCalculate, setIsCalculate] = useState(false);
 
   const operators = '+-x÷%';
-  const numbers = '0123456789';
+  const numbers = '.0123456789';
 
   const handleValues = (event) => {
     if (operators.includes(event.target.name)) {
