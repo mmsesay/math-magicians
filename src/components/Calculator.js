@@ -12,31 +12,7 @@ export const Calculator = () => {
   const operators = '+-x÷%';
   const numbers = '0123456789';
 
-  // const handleCalculation = (dataObject, element) => {
-  //   // if (firstValue) {
-  //   const response = calculate(dataObject, element);
-  //   if (response) {
-  //     console.log(response);
-  //     setFirstValue(response.total);
-  //     setSecondValue(response.next);
-  //     setOperator(response.operation);
-
-  //     // set the total result if both next and operation are null
-  //     if (response.next === null && response.operation === null) {
-  //       setResult(`${response.total || ''}`);
-  //     }
-
-  //     // check for dot in the next value and display the exact value
-  //     if (response.next) {
-  //       setResult(`${response.next || ''}`);
-  //     }
-  //   }
-  // };
-
   const handleValues = (event) => {
-    /* validate if we got a operator as first value. set that value to the first
-    otherwise set the operator */
-
     if (operators.includes(event.target.name)) {
       if (firstValue === '') {
         setFirstValue(event.target.name);
@@ -47,7 +23,7 @@ export const Calculator = () => {
     } 
     
     if (numbers.includes(event.target.name)) {
-      // validate for emp
+      // validate for an operation
       if (dataObject.operation === '') {
         // set the firstValue if we have non else concatenate the existing with new value
         if (firstValue === '') {
@@ -61,32 +37,24 @@ export const Calculator = () => {
       setResult(`${result}${event.target.name}`);
     }
 
+    // reset the result and force reload the browser
     if (event.target.name === 'AC') {
       setResult('');
-    //   dataObject.total = '';
-    //   dataObject.next = '';
-    //   dataObject.operation = '';
+      window.location.reload(true);
     }
 
-    console.log(dataObject);
-    // handleCalculation(dataObject, event.target.name);
     if (isCalculate) {
       const response = calculate(dataObject, event.target.name);
       if (response) {
-        console.log(response);
-        
         // set the total result if both next and operation are null
         if (response.next === null && response.operation === null) {
           setResult(`${response.total || ''}`);
         }
 
-        // set the total result if both next and operation are null
+        // validate we have all null response, reset the result and isCalculate  
         if (!response.total && !response.next && !response.operation) {
           setResult('');
           setIsCalculate(false);
-          setFirstValue('');
-          setSecondValue('');
-          setOperator('');
         }
         
         // check for dot in the next value and display the exact value
@@ -103,17 +71,19 @@ export const Calculator = () => {
   };
 
   useEffect(() => {
+    // create a new data object
     const newDataObject = {
       total: firstValue,
       next: secondValue,
       operation: operator,
     };
 
+    // update the data object state
     setDataObject(newDataObject);
-    console.log(isCalculate);
+
+    // validate the object have valid data and update the isCalculate state to perfom it calculation
     if (newDataObject.total && newDataObject.next && newDataObject.operation) {
       setIsCalculate(true);
-      console.log(isCalculate);
     }
   }, [firstValue, secondValue, operator, isCalculate]);
 
