@@ -7,13 +7,35 @@ export const Calculator = () => {
   const [operator, setOperator] = useState('');
   const [dataObject, setDataObject] = useState();
   const [result, setResult] = useState('');
+  const [isCalculate, setIsCalculate] = useState(false);
 
   const operators = '+-x÷%';
   const numbers = '0123456789';
 
+  // const handleCalculation = (dataObject, element) => {
+  //   // if (firstValue) {
+  //   const response = calculate(dataObject, element);
+  //   if (response) {
+  //     console.log(response);
+  //     setFirstValue(response.total);
+  //     setSecondValue(response.next);
+  //     setOperator(response.operation);
+
+  //     // set the total result if both next and operation are null
+  //     if (response.next === null && response.operation === null) {
+  //       setResult(`${response.total || ''}`);
+  //     }
+
+  //     // check for dot in the next value and display the exact value
+  //     if (response.next) {
+  //       setResult(`${response.next || ''}`);
+  //     }
+  //   }
+  // };
+
   const handleValues = (event) => {
     /* validate if we got a operator as first value. set that value to the first
-    other set the operator */
+    otherwise set the operator */
 
     if (operators.includes(event.target.name)) {
       if (firstValue === '') {
@@ -22,8 +44,8 @@ export const Calculator = () => {
         setOperator(event.target.name);
       }
       setResult(`${result}${event.target.name}`);
-    }
-
+    } 
+    
     if (numbers.includes(event.target.name)) {
       // validate for emp
       if (dataObject.operation === '') {
@@ -39,24 +61,43 @@ export const Calculator = () => {
       setResult(`${result}${event.target.name}`);
     }
 
+    if (event.target.name === 'AC') {
+      setResult('');
+    //   dataObject.total = '';
+    //   dataObject.next = '';
+    //   dataObject.operation = '';
+    }
+
     console.log(dataObject);
-    if (firstValue && secondValue && operator) {
+    // handleCalculation(dataObject, event.target.name);
+    if (isCalculate) {
       const response = calculate(dataObject, event.target.name);
       if (response) {
         console.log(response);
-        setFirstValue(response.total);
-        setSecondValue(response.next);
-        setOperator(response.operation);
-
+        
         // set the total result if both next and operation are null
         if (response.next === null && response.operation === null) {
           setResult(`${response.total || ''}`);
         }
 
-        // check for dot and display the result
-        if (response.next !== null) {
+        // set the total result if both next and operation are null
+        if (!response.total && !response.next && !response.operation) {
+          setResult('');
+          setIsCalculate(false);
+          setFirstValue('');
+          setSecondValue('');
+          setOperator('');
+        }
+        
+        // check for dot in the next value and display the exact value
+        if (response.next) {
           setResult(`${response.next || ''}`);
         }
+
+        // update the state of the values
+        setFirstValue(response.total);
+        setSecondValue(response.next);
+        setOperator(response.operation);
       }
     }
   };
@@ -67,9 +108,14 @@ export const Calculator = () => {
       next: secondValue,
       operation: operator,
     };
-   
+
     setDataObject(newDataObject);
-  }, [firstValue, secondValue, operator]);
+    console.log(isCalculate);
+    if (newDataObject.total && newDataObject.next && newDataObject.operation) {
+      setIsCalculate(true);
+      console.log(isCalculate);
+    }
+  }, [firstValue, secondValue, operator, isCalculate]);
 
   return (
     <div className="bg-white w-2/6 h-2/4 rounded oveflow-hidden">
