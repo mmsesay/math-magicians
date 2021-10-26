@@ -1,0 +1,27 @@
+.flex {
+  display: flex;
+}
+
+.flex-end {
+  justify-content: end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.font-md {
+  font-size: 18px;
+}
+
+.border-blue {
+  border: 1px solid rgb(81, 81, 255);
+}
+
+.h-20 {
+  height: 20px;
+}
+
+.bg-white {
+  background-color: #fff;
+}
