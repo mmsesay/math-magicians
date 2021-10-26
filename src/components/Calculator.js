@@ -88,30 +88,90 @@ export const Calculator = () => {
   }, [firstValue, secondValue, operator, isCalculate]);
 
   return (
-    <div className="bg-white w-2/6 h-2/4 rounded oveflow-hidden">
-      <div className="bg-gray-500 h-1/6 flex items-center justify-end p-5">
-        <p className="text-2xl text-white">{ result }</p>
-      </div>
-      <div className="bg-gray-400 h-5/6 grid grid-cols-4 gap-1">
-        <button name="AC" onClick={handleValues} className="bg-white w-22">AC</button>
-        <button name="+/-" onClick={handleValues} className="bg-white w-22">+/-</button>
-        <button name="%" onClick={handleValues} className="bg-white w-22">%</button>
-        <button name="÷" onClick={handleValues} className="bg-yellow-500 w-22">÷</button>
-        <button name="7" onClick={handleValues} className="bg-white w-22">7</button>
-        <button name="8" onClick={handleValues} className="bg-white w-22">8</button>
-        <button name="9" onClick={handleValues} className="bg-white w-22">9</button>
-        <button name="x" onClick={handleValues} className="bg-yellow-500 w-22">x</button>
-        <button name="4" onClick={handleValues} className="bg-white w-22">4</button>
-        <button name="5" onClick={handleValues} className="bg-white w-22">5</button>
-        <button name="6" onClick={handleValues} className="bg-white w-22">6</button>
-        <button name="-" onClick={handleValues} className="bg-yellow-500 w-22">-</button>
-        <button name="1" onClick={handleValues} className="bg-white w-22">1</button>
-        <button name="2" onClick={handleValues} className="bg-white w-22">2</button>
-        <button name="3" onClick={handleValues} className="bg-white w-22">3</button>
-        <button name="+" onClick={handleValues} className="bg-yellow-500 w-22">+</button>
-        <button name="0" onClick={handleValues} className="bg-white w-22 col-span-2">0</button>
-        <button name="." onClick={handleValues} className="bg-white w-22">.</button>
-        <button name="=" onClick={handleValues} className="bg-yellow-500 w-22">=</button>
+    <div className="flex justify-between w-full h-auto my-24 py-10 px-20 space-x-5">
+      <h1 className="w-1/2 text-4xl font-bold text-gray-300">Let&apos;s do some math!</h1>
+      <div className="bg-white w-1/2 h-auto p-3 oveflow-hidden shadow-4xl rounded-md">
+        <div className="bg-gray-500 h-20 flex items-center justify-end p-5">
+          <p className="text-3xl text-white font-bold">{ result }</p>
+        </div>
+        <div className="bg-gray-300 shadow-2xl p-2 h-auto grid grid-cols-4 gap-1 font-bold text-lg">
+          <button 
+            name="AC" 
+            onClick={handleValues} 
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:rounded hover:shadow-xl">AC</button>
+          <button 
+            name="+/
+            " onClick={handleValues} 
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">+/-</button>
+          <button 
+            name="%"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">%</button>
+          <button 
+            name="÷"
+            onClick={handleValues}
+            className="bg-yellow-500 w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">÷</button>
+          <button 
+            name="7"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">7</button>
+          <button 
+            name="8"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">8</button>
+          <button 
+            name="9"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">9</button>
+          <button 
+            name="x"
+            onClick={handleValues}
+            className="bg-yellow-500 w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">x</button>
+          <button 
+            name="4"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">4</button>
+          <button 
+            name="5"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">5</button>
+          <button 
+            name="6"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">6</button>
+          <button 
+            name="-"
+            onClick={handleValues}
+            className="bg-yellow-500 w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">-</button>
+          <button 
+            name="1"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">1</button>
+          <button 
+            name="2"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">2</button>
+          <button 
+            name="3"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">3</button>
+          <button 
+            name="+"
+            onClick={handleValues}
+            className="bg-yellow-500 w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">+</button>
+          <button 
+            name="0"
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl col-span-2">0</button>
+          <button 
+            name="."
+            onClick={handleValues}
+            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">.</button>
+          <button 
+            name="="
+            onClick={handleValues}
+            className="bg-yellow-500 w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl">=</button>
+        </div>
       </div>
     </div>
   );
