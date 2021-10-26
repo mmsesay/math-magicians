@@ -1,5 +1,5 @@
 export const Home = () => (
-  <div className="w-full h-auto my-24 py-10 px-20 space-y-10 text-white text-justify">
+  <div className="w-full h-auto my-24 py-10 px-20 space-y-10 text-justify">
     <h1 className="text-4xl text-gray-300 font-bold mb-20">Welcome to our page!</h1>
     <p className="text-2xl text-gray-200">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices, 

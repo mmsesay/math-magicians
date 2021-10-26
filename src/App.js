@@ -17,9 +17,9 @@ const App = () => (
     </head>
     <main className="bg-gray-600 h-screen">
       <Router>
-        <div>
-          <nav className="flex p-4 h-24 bg-gray-900 items-center justify-between text-gray-300 shadow-2xl">
-            <a className="w-auto text-2xl">Math Magician</a>
+        <div className="w-full overflow-hidden">
+          <nav className="flex p-4 px-20 h-24 bg-gray-900 items-center justify-between text-gray-300 shadow-2xl">
+            <a className="w-auto text-2xl">Math Magicians</a>
             <ul className="flex text-xl space-x-5">
               <li>
                 <Link to="/">Home</Link>

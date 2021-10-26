@@ -88,9 +88,9 @@ export const Calculator = () => {
   }, [firstValue, secondValue, operator, isCalculate]);
 
   return (
-    <div className="flex justify-between w-full h-auto my-24 py-10 px-20 space-x-5">
-      <h1 className="w-1/2 text-4xl font-bold text-gray-300">Let&apos;s do some math!</h1>
-      <div className="bg-white w-1/2 h-auto p-3 oveflow-hidden shadow-4xl rounded-md">
+    <div className="flex justify-between w-full h-auto my-24 py-10 px-20">
+      <h1 className="w-1-2 text-4xl font-bold text-gray-300">Let&apos;s do some math!</h1>
+      <div className="bg-white w-1-2 h-auto p-3 oveflow-hidden shadow-4xl rounded-md">
         <div className="bg-gray-500 h-20 flex items-center justify-end p-5">
           <p className="text-3xl text-white font-bold">{ result }</p>
         </div>
@@ -162,7 +162,7 @@ export const Calculator = () => {
           <button 
             name="0"
             onClick={handleValues}
-            className="bg-white w-22 h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl col-span-2">0</button>
+            className="bg-white h-20 focus:outline-none border-2 hover:border-gray-300 hover:shadow-xl col-span-2">0</button>
           <button 
             name="."
             onClick={handleValues}
