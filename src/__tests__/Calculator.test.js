@@ -7,4 +7,16 @@ describe('Tests calculator components', () => {
     const h1 = screen.getByText(/Let's do some math!/i);
     expect(h1).toBeInTheDocument();
   });
+
+  test('Checking if the calculator container exists', () => {
+    render(<Calculator />);
+    const container = screen.getByTestId('container');
+    expect(container).toBeInTheDocument();
+  });
+
+  test('Checking if the buttons total count is 19', () => {
+    render(<Calculator />);
+    const numbersButtons = screen.queryAllByTestId('keypad-button');
+    expect(numbersButtons).toHaveLength(19);
+  });
 });
