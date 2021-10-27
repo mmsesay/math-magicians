@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import { Home } from '../components';
 
 describe('Testing homepage', () => {
@@ -12,5 +13,10 @@ describe('Testing homepage', () => {
     render(<Home />);
     const paragraphs = screen.queryAllByTestId('paragraph');
     expect(paragraphs).toHaveLength(2);
+  });
+
+  test('renders as expected', () => {
+    const tree = renderer.create(<Home />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
