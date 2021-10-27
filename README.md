@@ -14,6 +14,12 @@ Coming soon...
 - Install the node modules: ```npm install```
 - Run the app: ```npm start``` or ```yarn start```
 
+## How to run the test
+- Clone the project: ```https://github.com/mmsesay/math-magicians.git```
+- Skip if you already have node installed otherwise download [nodejs](https://nodejs.org/en/download/) install it on your system
+- Install the node modules: ```npm install```
+- Run the app: ```npm test``` or ```yarn test```
+
 ## Author
 
 👤 **Muhammad Mustapha Sesay**
@@ -22,7 +28,12 @@ Coming soon...
 - Twitter: [@DeeMaejor](https://twitter.com/DeeMaejor)
 - LinkedIn: [Muhammad M Sesay](https://linkedin.com/in/muhammad-m-sesay)
 
-## 🤝 Contributing
+
+## 🤝 Contributor
+
+👤 **Rayan Rassam**
+
+- GitHub: [@Rayan84](https://github.com/Rayan84)
 
 Contributions, issues, and feature requests are welcome!
 
