@@ -89,7 +89,7 @@ export const Calculator = () => {
 
   return (
     <div className="flex justify-between w-full h-auto my-24 py-10 px-20">
-      <h1 className="w-1-2 text-4xl font-bold text-gray-300">Let&apos;s do some math!</h1>
+      <h1 data-testId='title' className="w-1-2 text-4xl font-bold text-gray-300">Let&apos;s do some math!</h1>
       <div className="bg-white w-1-2 h-auto p-3 oveflow-hidden shadow-4xl rounded-md">
         <div className="bg-gray-500 h-20 flex items-center justify-end p-5">
           <p className="text-3xl text-white font-bold">{ result }</p>
