@@ -3,6 +3,7 @@ Math magicians is a website for all fans of mathematics. It is a Single Page App
 
 ## Online version
 [Heroku Deployment](https://react-math-magician.herokuapp.com/)
+[Netlify Deployment](https://jovial-kowalevski-972645.netlify.app/)
 
 ## Built With
 
