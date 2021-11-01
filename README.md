@@ -1,9 +1,9 @@
 # math-magicians
 Math magicians is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:  Make simple calculations and read a random math-related quote.
 
-## Online version
-[Heroku Deployment](https://react-math-magician.herokuapp.com/)
-[Netlify Deployment](https://jovial-kowalevski-972645.netlify.app/)
+## Online versions
+- [Heroku Deployment](https://react-math-magician.herokuapp.com/)
+- [Netlify Deployment](https://jovial-kowalevski-972645.netlify.app/)
 
 ## Built With
 
